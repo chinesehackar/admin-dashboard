@@ -39,9 +39,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* 9. Improve line wrapping */
-p {
-  text-wrap: pretty;
-}
+
 h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
@@ -55,10 +53,10 @@ h1, h2, h3, h4, h5, h6 {
 
 :root {
     font-family: 'Roboto', system-ui, sans-serif;
-    --primary-light: #dff9e9;
-    --primary-normal: #7BD389;
-    --primary-dark: #384f46;
-    --primary-accent: #38E4AE;
+    --primary-light: #edf0ee;
+    --primary-normal: #f9f8e3;
+    --primary-dark: #384f38;
+    --primary-accent: #90f278;
 }
 
 body {
@@ -157,7 +155,7 @@ nav div, li {
 
 .action button {
     padding: 0.5rem 2rem;
-    background-color: var(--primary-normal);
+    background-color: var(--primary-accent);
     border-radius: 50px;
     border: transparent;
 }
@@ -167,19 +165,12 @@ nav div, li {
 .content {
     display: grid;
     grid-template-columns: 1fr 300px;
-}
-
-.content > * {
-    border: 1px solid black;
+    background-color: var(--primary-light);
 }
 
 .projects {
     grid-column: 1 / 2;
-    padding: 1rem 2rem 0;
-}
-
-.right-bar {
-    grid-column: 2 / 3;
+    padding: 1rem 1.25rem 0;
 }
 
 .project-grid {
@@ -189,7 +180,7 @@ nav div, li {
 }
 
 .project {
-    background-color: var(--primary-light);
+    background-color: var(--primary-normal);
     border-radius: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -201,11 +192,11 @@ nav div, li {
 
 .project::before {
     border-radius: 1.5rem;
-    border-left: 5px solid var(--primary-normal);
+    border-left: 5px solid var(--primary-accent);
     position:absolute;
     content:'';
     top:0;left:0;bottom:0;
-    z-index: 1;
+    opacity: 0.8;
 }
 
 .project div {
@@ -220,8 +211,47 @@ nav div, li {
     align-self: flex-end;
 }
 
-.projects-header {
-    margin-bottom: 1rem;
+.right-bar {
+    grid-column: 2 / 3;
+    display: grid;
+    padding: 1rem;
+    align-content: start;
+    gap: 2.5rem;
+}
+
+.announcement-grid, .trending-grid {
+    background-color: var(--primary-normal);
+    display: grid;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.announcement div {
+    font-weight: bold;
+}
+
+.line {
+    height: 1px;
+    background-color: #abc8b4;
+}
+
+.trending-grid {
+    gap: 1rem;
+}
+
+.trending-grid img {
+    width: 32px; 
+    height: 32px;
+}
+
+.user {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.user-content div {
+    font-weight: bold;
 }
 
 /* ASSETS */
@@ -248,12 +278,9 @@ nav .small-icon, nav .logo {
     width: 48px;
 }
 
-body > * {
-    border: 1px solid black;
-}
-
 /* MISC */
 
-h2 {
-    font-size: 1.75rem;
+.content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
