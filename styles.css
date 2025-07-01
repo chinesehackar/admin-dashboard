@@ -55,10 +55,10 @@ h1, h2, h3, h4, h5, h6 {
 
 :root {
     font-family: 'Roboto', system-ui, sans-serif;
-    --primary-ultra-light: #CFFCFF;
-    --primary-light: #AEDCC0;
+    --primary-light: #dff9e9;
     --primary-normal: #7BD389;
-    --primary-dark: #343E3D;
+    --primary-dark: #384f46;
+    --primary-accent: #38E4AE;
 }
 
 body {
@@ -102,7 +102,7 @@ nav div, li {
 .header {
     display: grid;
     align-content: center;
-    gap: 2rem;
+    gap: 1rem;
     padding: 2rem 4rem;
     height: auto;
 }
@@ -162,6 +162,68 @@ nav div, li {
     border: transparent;
 }
 
+/* CONTENT */
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+}
+
+.content > * {
+    border: 1px solid black;
+}
+
+.projects {
+    grid-column: 1 / 2;
+    padding: 1rem 2rem 0;
+}
+
+.right-bar {
+    grid-column: 2 / 3;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.project {
+    background-color: var(--primary-light);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.project::before {
+    border-radius: 1.5rem;
+    border-left: 5px solid var(--primary-normal);
+    position:absolute;
+    content:'';
+    top:0;left:0;bottom:0;
+    z-index: 1;
+}
+
+.project div {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.project-icons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-self: flex-end;
+}
+
+.projects-header {
+    margin-bottom: 1rem;
+}
+
 /* ASSETS */
 
 .small-icon {
@@ -188,4 +250,10 @@ nav .small-icon, nav .logo {
 
 body > * {
     border: 1px solid black;
+}
+
+/* MISC */
+
+h2 {
+    font-size: 1.75rem;
 }
