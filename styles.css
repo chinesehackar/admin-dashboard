@@ -58,7 +58,6 @@ h1, h2, h3, h4, h5, h6 {
     --primary-ultra-light: #CFFCFF;
     --primary-light: #9EE37D;
     --primary-normal: #63C132;
-    background-color: var(--primary-light);
 }
 
 img {
