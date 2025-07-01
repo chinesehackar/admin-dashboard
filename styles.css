@@ -162,6 +162,7 @@ nav div, li {
     background-color: var(--primary-accent);
     border-radius: 50px;
     border: transparent;
+    font-weight: 400;
 }
 
 /* CONTENT */
